@@ -19,5 +19,47 @@ body
 
 nav
 {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.container-fluid
+{
     background: rgba(0, 0, 0, 0.5);
+}
+
+label
+{
+    color: white;
+}
+
+form
+{
+   background: rgba(0, 0, 0, 0.5);
+   border: 1px solid white;
+}
+
+.form-control 
+{
+    background: rgba(0, 0, 0, 0.7);
+    height: 40px;
+    padding: 19px;
+    font-size: 22px;
+    color:white;
+    
+}
+
+.btn
+{
+    background: transparent;
+    font-size: 22px;
+    border: 1px solid white;
+    color:white;
+    width: 100%;
+}
+
+.btn-dark
+{
+    font-size: 15px;
+    color: black;
+    border: 1px solid black;
 }
