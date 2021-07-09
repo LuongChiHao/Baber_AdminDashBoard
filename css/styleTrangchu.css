@@ -1,0 +1,23 @@
+.navbar-expand-sm bg-primary navbar-dark
+{
+    background: transparent;
+}
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    background-image: url('../img/backgroundtrangchu.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+nav
+{
+    background: rgba(0, 0, 0, 0.5);
+}
