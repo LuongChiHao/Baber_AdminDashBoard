@@ -64,9 +64,101 @@
       </nav>
       
       <div class="container-fluid">
-          
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <h3 class="text-center text-light my-5">Danh sách tài khoản khách hàng</h3>
+            <div class="table-resposive">
+              <table class="table table-bordered">
+                <input class="form-control" id="myInputKH" type="text" placeholder="Search..">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>ID khách hàng</th>
+                    <th>User name</th>
+                    <th>Giới tính</th>
+                    <th>Tương tác</th>
+                  </tr>
+                </thead>
+                <tbody class="table-light" id="myTableKH">
+                  <tr data-h>
+                    <td>1</td>
+                    <td>HanLong001</td>             
+                    <td>Nam</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaKHModal">Xóa</button></td>
+                  </tr>
+    
+                  <tr>
+                    <td>2</td>
+                    <td>mylinh1991</td>
+                    <td>Nữ</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaKHModal">Xóa</button></td>
+                  </tr>
+    
+                  <tr>
+                    <td>3</td>
+                    <td>yenlinh1991</td>
+                    <td>Nữ</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaKHModal">Xóa</button></td>
+                  </tr>
+    
+                  
+                  <tr>
+                    <td>4</td>
+                    <td>lamchidung9</td>
+                    <td>Nam</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaKHModal">Xóa</button></td>
+                  </tr>
+    
+                  <tr>
+                    <td>5</td>
+                    <td>lylienkiet</td>
+                    <td>Nam</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaKHModal">Xóa</button></td>
+                  </tr>
+                </tbody> 
+              </table>
+    
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
       </div>
+
+
       
 </body>
+      <!-- Script table khách hàng -->
+      <script>
+        $(document).ready(function () {
+          $("#myInputKH").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTableKH tr").filter(function () {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+      </script>
+      <!-- End table khách hàng -->
 
+      <!-- The Modal -->
+      <div class="modal fade" id="XoaKHModal">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background: rgba(77, 76, 76, 0.8);border: 1px solid white;">
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form action="/action_page.php" class="p-4">
+                <h3 class="text-light mb-3">Xóa khách hàng này?</h3>
+              </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Xóa</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Không</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
 </html>
