@@ -27,7 +27,7 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-<link rel="stylesheet" href="./css/styleTrangchu.css">
+<link rel="stylesheet" href="styleLichHen.css">
 
  
 </head>
@@ -64,9 +64,139 @@
       </nav>
       
       <div class="container-fluid">
-        
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <h3 class="text-center text-light my-5">Danh sách lịch hẹn</h3>
+            <div class="table-resposive">
+              <table class="table table-dark table-striped">
+                <input class="form-control" id="myInputLH" type="text" placeholder="Search..">
+                <thead>
+                  <tr>
+                    <th>Mã lịch hẹn</th>
+                    <th>Ngày đặt</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Mã tóc</th>
+                    <th>User name</th>
+                    <th>Giới tính</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền (VND)</th>
+                    <th>Tình trạng</th>
+                    <th>Tương tác</th>
+                  </tr>
+                </thead>
+                <tbody id="myTableLH">
+                  <tr data-h>
+                    <td>01072101</td>
+                    <td>01/07/2021</td>     
+                    <td>03/07/2021</td>        
+                    <td>La01M</td>
+                    <td>lylienkiet</td>
+                    <td>Nam</td>
+                    <td>2</td>
+                    <td>200,000</td>
+                    <td>Hoành thành</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
+                  </tr>
+    
+                  <tr>
+                    <td>01072101</td>
+                    <td>01/07/2021</td>     
+                    <td>03/07/2021</td>        
+                    <td>La01M</td>
+                    <td>lylienkiet</td>
+                    <td>Nam</td>
+                    <td>2</td>
+                    <td>200,000</td>
+                    <td>Hoành thành</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
+                  </tr>
+    
+                  <tr>
+                    <td>01072101</td>
+                    <td>01/07/2021</td>     
+                    <td>03/07/2021</td>        
+                    <td>La01M</td>
+                    <td>lylienkiet</td>
+                    <td>Nam</td>
+                    <td>2</td>
+                    <td>200,000</td>
+                    <td>Hoành thành</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
+
+                  </tr>
+    
+                  
+                  <tr>
+                    <td>01072101</td>
+                    <td>01/07/2021</td>     
+                    <td>03/07/2021</td>        
+                    <td>La01M</td>
+                    <td>lylienkiet</td>
+                    <td>Nam</td>
+                    <td>2</td>
+                    <td>200,000</td>
+                    <td>Hoành thành</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
+
+                  </tr>
+    
+                  <tr>
+                    <td>01072101</td>
+                    <td>01/07/2021</td>     
+                    <td>03/07/2021</td>        
+                    <td>La01M</td>
+                    <td>lylienkiet</td>
+                    <td>Nam</td>
+                    <td>2</td>
+                    <td>200,000</td>
+                    <td>Hoành thành</td>
+                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
+
+                  </tr>
+                </tbody> 
+              </table>
+    
+            </div>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
       </div>
       
 </body>
+
+      <!-- Script table khách hàng -->
+      <script>
+        $(document).ready(function () {
+          $("#myInputLH").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTableLH tr").filter(function () {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+      </script>
+      <!-- End table khách hàng -->
+
+      <div class="modal fade" id="XoaLHModal">
+        <div class="modal-dialog">
+          <div class="modal-content" style="background: rgba(77, 76, 76, 0.8);border: 1px solid white;">
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <form action="/action_page.php" class="p-4">
+                <h3 class="text-light mb-3">Xóa khách hàng này?</h3>
+              </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Xóa</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Không</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
 
 </html>

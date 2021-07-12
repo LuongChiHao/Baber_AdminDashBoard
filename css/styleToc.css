@@ -1,3 +1,8 @@
+.thumbnail
+{
+    max-width:20%;
+}
+
 .navbar-expand-sm bg-primary navbar-dark
 {
     background: transparent;
