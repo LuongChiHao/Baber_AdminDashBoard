@@ -48,14 +48,13 @@ form
     
 }
 
-.btn
+#cardtitle
 {
-    background: transparent;
-    font-size: 22px;
-    border: 1px solid white;
-    color:white;
-    width: 100%;
+    font-size: 40px;
+    text-align: center;
 }
+
+
 
 .btn-dark
 {
@@ -63,4 +62,5 @@ form
     color: black;
     border: 1px solid black;
 }
+
 

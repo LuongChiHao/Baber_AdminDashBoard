@@ -28,12 +28,12 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
     integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="./css/styleToc.css">
+  <link rel="stylesheet" href="./css/styleIndex.css">
 
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
     <!-- Brand/logo -->
     <a class="navbar-brand" href="trangchu.html">
       <img src="./img/logo-footer.png" alt="logo" style="width:90%;">
@@ -63,6 +63,7 @@
 
   </nav>
 
+  <div class="toc">
   <div class="container-fluid">
     <div class="container">
       <h1 class="text-light text-center pt-3 pb-5">QUẢN LÝ TÓC</h1>
@@ -93,7 +94,7 @@
                 <option value="Nữ">Nữ</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Tạo</button>
+            <button type="submit" class="btn btn-primary btntoc">Tạo</button>
           </form>
         </div>
         <div class="col-md-3"></div>
@@ -104,8 +105,8 @@
     <div class="row my-5">
       <div class="col-md-1"></div>
       <div class="col-md-10">
-        <div class="table-resposive">
-          <table class="table table-bordered">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
             <input class="form-control" id="myInput" type="text" placeholder="Search..">
             <thead class="thead-dark">
               <tr>
@@ -114,20 +115,18 @@
                 <th>Kiểu tóc</th>
                 <th>Ảnh tóc</th>
                 <th>Giới tính</th>
-                <th>Tương tác</th>
               </tr>
             </thead>
             <tbody class="table-light" id="myTable">
-              <tr data-h>
+              <tr data-h data-toggle="modal" data-target="#SuaTocModal">
                 <td>1</td>
                 <td>Mo01M</td>
                 <td>Mohican nam mùa hè</td>
                 <td><img class="thumbnail" src="./img/mohican.jpg"></td>
                 <td>Nam</td>
-                <td><button class="btn-dark btn" data-toggle="modal" data-target="#SuaTocModal">Sửa</button></td>
               </tr>
 
-              <tr>
+              <tr data-toggle="modal" data-target="#SuaTocModal">
                 <td>2</td>
                 <td>La01M</td>
                 <td>Layer nam</td>
@@ -135,20 +134,18 @@
                   <img class="thumbnail" src="./img/layer.jpg">
                 </td>
                 <td>Nam</td>
-                <td><button class="btn-dark btn" data-toggle="modal" data-target="#SuaTocModal">Sửa</button></td>
               </tr>
 
-              <tr>
+              <tr data-toggle="modal" data-target="#SuaTocModal">
                 <td>3</td>
                 <td>La02F</td>
                 <td>Layer nữ ngắn</td>   
                 <td>  <img class="thumbnail" src="./img/layernungan.png"></td>
                 <td>Nữ</td>
-                <td><button class="btn-dark btn" data-toggle="modal" data-target="#SuaTocModal">Sửa</button></td>
               </tr>
 
               
-              <tr>
+              <tr data-toggle="modal" data-target="#SuaTocModal">
                 <td>4</td>
                 <td>Un01M</td>
                 <td>Undercut nam</td>
@@ -156,17 +153,15 @@
                   <img class="thumbnail" src="./img/undercut.jpg">
                 </td>
                 <td>nam</td>
-                <td><button class="btn-dark btn" data-toggle="modal" data-target="#SuaTocModal">Sửa</button></td>
               </tr>
 
-              <tr>
+              <tr data-toggle="modal" data-target="#SuaTocModal">
                 <td>5</td>
                 <td>Un02F</td>
                 <td>Undercut nữ</td>
                 <td><img class="thumbnail" src="./img/undercutnu.jpg"></td>
                
                 <td>Nữ</td>
-                <td><button class="btn-dark btn" data-toggle="modal" data-target="#SuaTocModal">Sửa</button></td>
               </tr>
             </tbody>
           </table>
@@ -177,6 +172,7 @@
     </div>
 
   </div>
+</div>
 
 </body>
 
@@ -210,13 +206,13 @@
               <option value="Nữ">Nữ</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-success">Sửa</button>
+          <button type="submit" class="btn btn-success btntoc">Sửa</button>
         </form>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Xóa</button>
+        <button type="button" class="btn btn-danger btntoc" data-dismiss="modal">Xóa</button>
       </div>
 
     </div>

@@ -27,7 +27,7 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-<link rel="stylesheet" href="styleLichHen.css">
+<link rel="stylesheet" href="./css/styleIndex.css">
 
  
 </head>
@@ -68,8 +68,8 @@
               <div class="col-md-1"></div>
               <div class="col-md-10">
                 <h3 class="text-center text-light my-5">Danh sách lịch hẹn</h3>
-            <div class="table-resposive">
-              <table class="table table-dark table-striped">
+            <div class="table-responsive">
+              <table class="table table-dark table-striped table-hover">
                 <input class="form-control" id="myInputLH" type="text" placeholder="Search..">
                 <thead>
                   <tr>
@@ -82,11 +82,10 @@
                     <th>Số lượng</th>
                     <th>Thành tiền (VND)</th>
                     <th>Tình trạng</th>
-                    <th>Tương tác</th>
                   </tr>
                 </thead>
                 <tbody id="myTableLH">
-                  <tr data-h>
+                  <tr data-h data-toggle="modal" data-target="#XoaLHModal">
                     <td>01072101</td>
                     <td>01/07/2021</td>     
                     <td>03/07/2021</td>        
@@ -96,10 +95,9 @@
                     <td>2</td>
                     <td>200,000</td>
                     <td>Hoành thành</td>
-                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
                   </tr>
     
-                  <tr>
+                  <tr data-toggle="modal" data-target="#XoaLHModal">
                     <td>01072101</td>
                     <td>01/07/2021</td>     
                     <td>03/07/2021</td>        
@@ -109,10 +107,9 @@
                     <td>2</td>
                     <td>200,000</td>
                     <td>Hoành thành</td>
-                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
                   </tr>
     
-                  <tr>
+                  <tr data-toggle="modal" data-target="#XoaLHModal">
                     <td>01072101</td>
                     <td>01/07/2021</td>     
                     <td>03/07/2021</td>        
@@ -122,12 +119,11 @@
                     <td>2</td>
                     <td>200,000</td>
                     <td>Hoành thành</td>
-                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
 
                   </tr>
     
                   
-                  <tr>
+                  <tr data-toggle="modal" data-target="#XoaLHModal">
                     <td>01072101</td>
                     <td>01/07/2021</td>     
                     <td>03/07/2021</td>        
@@ -137,11 +133,10 @@
                     <td>2</td>
                     <td>200,000</td>
                     <td>Hoành thành</td>
-                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
 
                   </tr>
     
-                  <tr>
+                  <tr data-toggle="modal" data-target="#XoaLHModal">
                     <td>01072101</td>
                     <td>01/07/2021</td>     
                     <td>03/07/2021</td>        
@@ -151,7 +146,6 @@
                     <td>2</td>
                     <td>200,000</td>
                     <td>Hoành thành</td>
-                    <td><button class="btn-dark btn" data-toggle="modal" data-target="#XoaLHModal">Xóa</button></td>
 
                   </tr>
                 </tbody> 
@@ -178,25 +172,76 @@
       </script>
       <!-- End table khách hàng -->
 
+      <!-- Modal xoas -->
       <div class="modal fade" id="XoaLHModal">
         <div class="modal-dialog">
           <div class="modal-content" style="background: rgba(77, 76, 76, 0.8);border: 1px solid white;">
 
+            <!-- Modal header -->
+              <div class="modal-header">
+                <h3 class="text-light mb-3">Xóa khách hàng này?</h3>
+              </div>
+
             <!-- Modal body -->
             <div class="modal-body">
               <form action="/action_page.php" class="p-4">
-                <h3 class="text-light mb-3">Xóa khách hàng này?</h3>
+
+                  <div class="form-group">
+                    <label class="text-light" for="matoc">Mã tóc: </label>
+                    <select name="matoc" id="matoc" class="custom-select">
+                        <option value="" selected>La01M</option>
+                        <option value="">Mo01M</option>
+                        <option value="">La02F</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="text-light" for="">Username: </label>
+                      <select name="username" id="username" class="custom-select">
+                        <option value="" selected>lylienkiet</option>
+                        <option value="" selected>lylienkiet</option>
+                        <option value="" selected>lylienkiet</option>
+                        <option value="" selected>lylienkiet</option>
+                        <option value="" selected>lylienkiet</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="text-light" for="gioitinh">Giới tính: </label>
+                    <select name="gioitinh" id="gioitinh" class="custom-select">
+                        <option value="" selected>Nam</option>
+                        <option value="">Nữ</option>
+          
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="text-light" for="soluong">Số lượng: </label>
+                    <input type="text" class="form-control" id="soluong" placeholder="Số lượng" value="2">
+                  </div>
+
+                  
+                  <div class="form-group">
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" id="trangthai">
+                      <label class="custom-control-label text-light" for="trangthai">Đã hoàn thành</label>
+                    </div>
+                    
+                  </div>
+
               </form>
             </div>
 
             <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Xóa</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Không</button>
+              <button type="button" class="btn btn-success btnlichhen" data-dismiss="modal">Sửa</button>
+              <button type="button" class="btn btn-danger btnlichhen" data-dismiss="modal">Xóa</button>
+              <button type="button" class="btn btn-primary btnlichhen" data-dismiss="modal">Không</button>
             </div>
 
           </div>
         </div>
       </div>
+      <!-- End Modal xoas -->
 
 </html>
